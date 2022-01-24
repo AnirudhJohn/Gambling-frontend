@@ -1,0 +1,11 @@
+<div class="login">
+    <div class="form">
+        <form class="login-form" [formGroup]="loginForm">
+            <span class="material-icons">lock</span>
+            <input type="text" formControlName="username" placeholder="Username" />
+            <input type="password" formControlName="password" placeholder="password" required />
+            <div class="err" *ngIf="isValid('password')">Password cannot be blank</div>
+            <button (click)="login()">login</button>
+        </form>
+    </div>
+</div>
