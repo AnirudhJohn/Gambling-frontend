@@ -22,7 +22,7 @@ export class UserItemComponent implements OnInit {
       private router: Router
     ) { 
     
-    this.user = new User('', false, [], 0, '') 
+    this.user = new User('', false, [], 0, '','') 
     // this.users = []
     // this.parent = ''
     // this.rm ='';

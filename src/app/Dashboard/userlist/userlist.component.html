@@ -1,59 +1,71 @@
-<h1>
+<div *ngIf="viewmode; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+    <h1>Users</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>Name</th>
+            <th>money</th>
+            <th>active </th>
 
-    users
+        </tr>
+        <tr *ngFor="let data of detailedView">
+            <td> {{ data.username }}</td>
+            <td>{{ data.money }}</td>
 
-</h1>
-<!-- <h1>{{userData[0]['money']}}</h1>
+            <!-- if condition to check block status -->
 
-<li *ngFor="let user of user.children">
-    <div class="mb-3">
-        {{user}}
-        <button class="btn-success rmbutton">Edit user</button> -->
-<!-- <button class="btn-danger btn-sm rmbutton pl-3" (click)="remove(user)">Edit User</button>
-            <button class="btn-danger btn-sm rmbutton" (click)="remove(user)">Remove User</button> -->
-<!-- <hr>
+            <td><b *ngIf="data.isActive; else elseBlock"> Active </b>
+                <ng-template #elseBlock> <b>Blocked</b> </ng-template>
+            </td>
+
+
+
+        </tr>
+
+    </table>
+    Content to render when condition is true.
+    <button (click)="viewmode = false">Cancel</button>
+
+
+</ng-template>
+
+
+<ng-template #elseBlock>
+
+    <div>
+        <h1>Users</h1>
+        <div *ngIf="usure">
+            <h3> > Sure to Delete {{todelete.username}} ? </h3>
+            <button class="btn btn-danger mx-3" (click)="usure = false;remove(todelete)">Yes</button>
+            <button class="btn btn-dark" (click)="usure = false">No</button>
+            <h5>It would also delete following users</h5>
+            <ul *ngFor="let data of detailedView ">
+                <li>{{data.username}}</li>
+            </ul>
+        </div>
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>money</th>
+                <th>active </th>
+                <th>children</th>
+                <th>parent</th>
+            </tr>
+            <tr *ngFor="let data of userData">
+                <td> {{ data.username }}</td>
+                <td>{{ data.money }}</td>
+                <!-- if condition to check block status -->
+
+                <td (click)="toogleBlock(data)"><button class="btn btn-outline-danger btn-success" *ngIf="data.isActive; else elseBlock"> Block </button>
+                    <ng-template #elseBlock> <button class="btn btn-outline-success btn-success">Unblock</button> </ng-template>
+                </td>
+                <td><button class="btn btn-outline-primary button-success" (click)="viewEveryone(data); viewmode=true">view</button> </td>
+                <td><button class="btn btn-outline-danger btn-danger" (click)="usure = true; todelete = data;viewEveryone(data)">remove User</button></td>
+
+            </tr>
+
+
+        </table>
     </div>
-</li>
- -->
 
-<table class="table table-striped">
-    <tr>
-        <th>Name</th>
-        <th>money</th>
-        <th>active </th>
-        <th>children</th>
-        <th>parent</th>
-    </tr>
-    <tr *ngFor="let data of userData">
-        <td> {{ data.username }}</td>
-        <td>{{ data.money }}</td>
-        <!-- if condition to check block status -->
-
-        <td (click)="toogleBlock(data)"><button *ngIf="data.isActive; else elseBlock"> Block </button>
-            <ng-template #elseBlock> <button>Unblock</button> </ng-template>
-        </td>
-        <td><button>view</button> </td>
-        <td><button>del</button></td>
-    </tr>
-
-</table>
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div *ngFor="let user of user.children"> -->
-
-<ul>
-    <li *ngFor="let data of userData">
-        {{ data.username }}-- {{ data.money }} --{{ data.isActive }} --{{ data.parent }} -- {{data.children}}
-    </li>
-</ul>
-<!-- </div> -->
+</ng-template>

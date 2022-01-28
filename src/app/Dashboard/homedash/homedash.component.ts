@@ -19,6 +19,7 @@ export class HomedashComponent implements OnInit {
     this.role = '';
     this.wallet = 0;
     
+    
    }
 
   ngOnInit(): void {
@@ -27,6 +28,7 @@ export class HomedashComponent implements OnInit {
     this.role = '';
     this.wallet = 0;
     this.getData()
+    
   }
 
 
@@ -38,6 +40,7 @@ export class HomedashComponent implements OnInit {
         this.name = arr['username']
         this.role = arr['role']
         this.wallet = arr['wallet']
+       
       }
     )
   }

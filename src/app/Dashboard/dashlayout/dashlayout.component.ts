@@ -34,6 +34,7 @@ export class DashlayoutComponent implements OnInit {
       this.router.navigate(['/login'])
     }
     this.validateSession(this.t)
+
   }
 
   activ(q: any){

@@ -40,8 +40,8 @@ export class TransferComponent implements OnInit {
     .subscribe({
         next: (res) => {
           console.log(res)
-          this.users = JSON.parse(JSON.stringify(res))['children']
-          console.log(this.users)
+          this.users = JSON.parse(JSON.stringify(res))['data']['child']
+          console.log('got these '+this.users)
         },
         error: (e) => {
           console.log('in user failed response error',e['message'])

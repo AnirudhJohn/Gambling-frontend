@@ -7,15 +7,17 @@ export class User {
     isActive: Boolean
     children: Array<String>
     money: number
-    parent: string
+    parent: String
+    role: String
 
-    constructor(username: string, isActive: boolean, children: [], money: number, parent: string,
+    constructor(username: String, isActive: boolean, children: [], money: number, parent: String,role: String
     ){
         this.username = username
         this.isActive = isActive
         this.children = children
         this.money = money
         this.parent = parent
+        this.role = role
     }
 
 }

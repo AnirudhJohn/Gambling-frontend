@@ -25,7 +25,6 @@ export class DataserviceService {
       headers: new HttpHeaders().append('authorization',this.token)
   })}
   getChild(username: any){
-    console.log('inside getchild method to get child data'+username)
     return this.http.post(this.baseUrl+'/api/data/getchilddata',{'username': username} ,{
       headers: new HttpHeaders().append('authorization',this.token)
   })}
@@ -55,6 +54,12 @@ export class DataserviceService {
       headers: new HttpHeaders().append('authorization', token)
     })
   }
+
+  async changeValidity(username: String){
+    console.log('in api method '+username)
+    return this.http.put(this.baseUrl+'/api/data/block',{'username': username} ,{
+      headers: new HttpHeaders().append('authorization',this.token)
+  })}
 
   one(){
     return this.http.get(this.baseUrl+'/api/one')
