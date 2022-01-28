@@ -1,11 +1,25 @@
-<div class="login">
-    <div class="form">
-        <form class="login-form" [formGroup]="loginForm">
-            <span class="material-icons">lock</span>
-            <input type="text" formControlName="username" placeholder="Username" />
-            <input type="password" formControlName="password" placeholder="password" required />
-            <div class="err" *ngIf="isValid('password')">Password cannot be blank</div>
-            <button (click)="login()">login</button>
-        </form>
+<div class="loginb">
+
+    <div class="login">
+        <div class="form">
+            <form class="login-form" [formGroup]="loginForm">
+                <span class="material-icons">Login</span>
+                <div *ngIf="showErrorMessage">
+                    <p class="error">Invalid username and password Please try again</p>
+                </div>
+                <input type="text" formControlName="username" placeholder="Username" />
+                <input type="password" formControlName="password" placeholder="password" required />
+                <div *ngIf="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)" class="alert">
+
+                    <div *ngIf="loginForm.controls['username'].errors">
+
+                        Please enter username
+
+                        <div class="err" *ngIf="isValid('password')">Password cannot be blank</div>
+                    </div>
+                </div>
+                <button (click)="login()">login</button>
+            </form>
+        </div>
     </div>
 </div>

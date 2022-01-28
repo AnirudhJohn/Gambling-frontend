@@ -1,0 +1,10 @@
+<form [formGroup]="genMon">
+    <div class="mb-3">
+        <h3>Money generator</h3>
+        <label for="exampleInputEmail1" class="form-label">Ammount</label>
+        <input formControlName="ammount" type="number" class="form-control" id="generatedAmmount" aria-describedby="emailHelp">
+
+
+        <button (click)="gen()" type="submit" class="btn btn-success mt-3">Generate</button>
+    </div>
+</form>

@@ -1,0 +1,12 @@
+<h1>Transactions</h1>
+<hr>
+
+
+<div>
+    <!-- {{this.sent}} -->
+    <ul>
+        <li *ngFor="let a of sent">
+            {{a['sender']}} sent to {{a['receiver']}} rupees: {{a['amount']}} at {{a['createdAt']}}
+        </li>
+    </ul>
+</div>

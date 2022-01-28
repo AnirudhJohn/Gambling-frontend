@@ -1,0 +1,59 @@
+<h1>
+
+    users
+
+</h1>
+<!-- <h1>{{userData[0]['money']}}</h1>
+
+<li *ngFor="let user of user.children">
+    <div class="mb-3">
+        {{user}}
+        <button class="btn-success rmbutton">Edit user</button> -->
+<!-- <button class="btn-danger btn-sm rmbutton pl-3" (click)="remove(user)">Edit User</button>
+            <button class="btn-danger btn-sm rmbutton" (click)="remove(user)">Remove User</button> -->
+<!-- <hr>
+    </div>
+</li>
+ -->
+
+<table class="table table-striped">
+    <tr>
+        <th>Name</th>
+        <th>money</th>
+        <th>active </th>
+        <th>children</th>
+        <th>parent</th>
+    </tr>
+    <tr *ngFor="let data of userData">
+        <td> {{ data.username }}</td>
+        <td>{{ data.money }}</td>
+        <!-- if condition to check block status -->
+
+        <td (click)="toogleBlock(data)"><button *ngIf="data.isActive; else elseBlock"> Block </button>
+            <ng-template #elseBlock> <button>Unblock</button> </ng-template>
+        </td>
+        <td><button>view</button> </td>
+        <td><button>del</button></td>
+    </tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div *ngFor="let user of user.children"> -->
+
+<ul>
+    <li *ngFor="let data of userData">
+        {{ data.username }}-- {{ data.money }} --{{ data.isActive }} --{{ data.parent }} -- {{data.children}}
+    </li>
+</ul>
+<!-- </div> -->
