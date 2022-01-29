@@ -181,14 +181,14 @@ export class UserlistComponent implements OnInit {
 
 
   remove(user: User){
-    // this.login.removeUser(user.username)
-    // .subscribe(data =>{
-    //   console.log('User deleted')
-    //   this.usure = false
-    //   this.router.navigate(['./'])
-    // })
+    this.login.removeUser(user.username)
+    .subscribe(data =>{
+      console.log('User deleted')
+      this.usure = false
+    })
     console.log(user.username)
     this.removeEveryone(user)
+    this.router.navigate(['../'])
   }
 
 
@@ -217,7 +217,10 @@ export class UserlistComponent implements OnInit {
           // The main login happening here
           console.log('name: ' + temp['username'] + ' role: ' + temp['role'])
 
-          console.log(temp.username)
+          this.login.removeUser(temp.username)
+          .subscribe( data => {
+            console.log(data)
+          })
           this.removeEveryone(temp);
 
         })

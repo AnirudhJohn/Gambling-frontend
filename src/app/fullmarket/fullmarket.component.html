@@ -5,4 +5,25 @@
         <li>{{data}}</li>
     </ul>
 </main> -->
-<p>{{results}}</p>
+<div *ngIf="pressed === true; else elseBlock">
+    <button class="btn btn-primary" (click)="activeElement=[]; pressed =false">Close</button>
+    <ul *ngFor="let data of activeElement">
+        <li>
+            {{data.match_name}}
+
+        </li>
+
+    </ul>
+
+
+
+</div>
+<ng-template #elseBlock>
+
+    <ul *ngFor="let data of leagues">
+        <li>
+            <button (click)="activeElement=data.matches; pressed=true">{{data.name}}</button>
+        </li>
+    </ul>
+
+</ng-template>

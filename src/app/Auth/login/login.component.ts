@@ -62,6 +62,7 @@ export class LoginComponent implements OnInit {
           console.info('complete') 
           
           this.router.navigate(['/dash'])
+          
 
         }
     }

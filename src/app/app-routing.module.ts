@@ -19,10 +19,12 @@ import { HorseracingComponent } from './Home/horseracing/horseracing.component';
 import { LotteryComponent } from './Home/lottery/lottery.component';
 import { SidebarComponent } from './Home/sidebar/sidebar.component';
 const routes: Routes = [
+  // 1. Login
   {path: '', component:LoginComponent},
   
-  
+  // 2. Login
   {path: 'login', component:LoginComponent},
+  // 3. Dashboard
   {path: 'dash', component: DashlayoutComponent,children: [
     {
       path: '', component: HomedashComponent
@@ -44,6 +46,7 @@ const routes: Routes = [
       path: 'transfer', component: TransferComponent
     }
   ]},
+  // 4. Home 
   {path: 'home', component:MainComponent,children: [
     {
       path: '', component: SidebarComponent
