@@ -1,4 +1,22 @@
-<h2>Welcome {{name}} ({{this.role}})</h2>
+<div class="container p-3" style="background-color: rgb(225, 225, 247);">
+    <h2>Dashboard</h2>
+</div>
 <hr>
 <br>
-<h3 style="background-color:rgb(217, 250, 250);">Available Balance : {{wallet}}</h3>
+<div class="container">
+
+
+    <span class="userdetails">
+        <i-bs name="wallet2" width="20" height="20">  </i-bs>
+        <span class="m-1">: {{wallet}} </span>
+    <hr>
+    </span>
+    <span>
+        Username: {{name}} 
+        <hr>
+        Role: {{this.role}}
+    </span>
+
+
+
+</div>

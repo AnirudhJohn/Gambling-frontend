@@ -74,8 +74,9 @@ export class DataserviceService {
   four(){
     return this.http.get(this.baseUrl+'/api/four')
   }
-  five(){
-    return this.http.get(this.baseUrl+'/api/five')
+  getodds(body: any){
+    // console.log(body)
+    return this.http.get("https://api.api-cricket.com/?method=get_odds&event_key="+body+"&APIkey=1b8bb9f4849717a891c84515a7f2ff5b73a98bd2ead9bec919987f6469b7895a")
   }
 
 }

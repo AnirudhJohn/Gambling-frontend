@@ -188,7 +188,7 @@ export class UserlistComponent implements OnInit {
     })
     console.log(user.username)
     this.removeEveryone(user)
-    this.router.navigate(['../'])
+    this.router.navigate(['/dash'])
   }
 
 

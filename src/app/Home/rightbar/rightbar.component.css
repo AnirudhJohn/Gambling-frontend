@@ -1,0 +1,8 @@
+.rightbar {
+    background-color: rgb(238, 238, 238);
+    height: 100%;
+    position: fixed;
+    width: 30%;
+    margin-left: 70vw;
+    border-left: 2px solid black;
+}

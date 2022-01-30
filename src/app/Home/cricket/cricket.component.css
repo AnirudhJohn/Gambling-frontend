@@ -63,3 +63,27 @@ li a:hover:not(.active) {
         border-left: 0px;
     }
 }
+
+.left {
+    background-color: rgb(107, 195, 246);
+    padding: 10px 10px 10px 10px;
+}
+
+.right {
+    background-color: rgb(250, 170, 184);
+    padding: 10px 10px 10px 10px;
+    margin-top: 3vh;
+}
+
+.date {
+    font-size: 2vh;
+}
+
+.rightbar {
+    background-color: rgb(238, 238, 238);
+    height: 100%;
+    position: fixed;
+    width: 30%;
+    margin-left: 70vw;
+    border-left: 2px solid black;
+}

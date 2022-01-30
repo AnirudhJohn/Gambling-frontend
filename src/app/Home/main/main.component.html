@@ -1,25 +1,87 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark header">
+<div class="top fixed-top">
+    <div class="top1">
+        <img src="../../../assets/logo.png" alt="" id="logo">
+        <button class="btn btn-danger btn-sm log my-3 me-3
+        " (click)="logout()">Logout</button></div>
+
+    <div class="topnav" id="myTopnav">
+        <a class="active" routerLink=".">Home</a>
+        <a routerLink="./inplay">In Play</a>
+        <a routerLink="./multimarkets">Multi markets</a>
+        <a routerLink="./cricket">Cricket</a>
+        <a routerLink="./soccer">Soccer</a>
+        <a routerLink="./tennis">Tennis</a>
+        <a routerLink="./casino">Casino</a>
+        <a routerLink="./horseracing">Horse Racing</a>
+        <a routerLink="./lottery">Lottery</a>
+        <a routerLink="/dash">Dashboard</a>
+        <a routerLink="javascript:void(0);" class="icon" (click)="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+</div>
+<div class="main">
+
+    <router-outlet></router-outlet>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark header">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="../../../assets/logo.png" alt="" id="logo"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" routerLink="./"><img src="../../../assets/logo.png" alt="" id="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="./navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <!-- {{this.name}} -->
+                    <a class="nav-link dropdown-toggle" routerLink="./" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       
                     </a>
                     <ul class="dropdown-menu col-6 col-md-4" aria-labelledby="navbarDropdown">
-                        <!-- <li><a class="dropdown-item teal-200" href="#">Role: {{this.role}}</a></li>
-                            <li><a class="dropdown-item teal-200" href="#">Wallet: {{this.wallet}}</a></li> -->
-
+                       
                     </ul>
                 </li>
-                <!-- <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li> -->
+               
             </ul>
             <button (click)="logout()" class="d-flex btn-danger btn-sm">Logout</button>
         </div>
@@ -42,4 +104,4 @@
     <a routerLink="/dash">Dashboard</a>
 </div>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->

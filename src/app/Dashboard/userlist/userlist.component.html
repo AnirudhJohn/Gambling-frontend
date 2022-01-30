@@ -23,8 +23,7 @@
         </tr>
 
     </table>
-    Content to render when condition is true.
-    <button (click)="viewmode = false">Cancel</button>
+    <button class="btn btn-success" (click)="viewmode = false">Close</button>
 
 
 </ng-template>
@@ -44,28 +43,44 @@
             </ul>
         </div>
         <table class="table table-striped">
-            <tr>
-                <th>Name</th>
-                <th>money</th>
-                <th>active </th>
-                <th>children</th>
-                <th>parent</th>
-            </tr>
+            <thead>
+                <tr>
+
+                    <th>Name</th>
+                    <th>money</th>
+                    <th>active </th>
+                    <th>children</th>
+                    <th>parent</th>
+                </tr>
+            </thead>
             <tr *ngFor="let data of userData">
                 <td> {{ data.username }}</td>
-                <td>{{ data.money }}</td>
+
+                <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ data.money }}</td>
                 <!-- if condition to check block status -->
 
-                <td (click)="toogleBlock(data)"><button class="btn btn-outline-danger btn-success" *ngIf="data.isActive; else elseBlock"> Block </button>
-                    <ng-template #elseBlock> <button class="btn btn-outline-success btn-success">Unblock</button> </ng-template>
+                <td (click)="toogleBlock(data)">
+                    <i-bs class="myicons" *ngIf="data.isActive; else elseBlock" name="unlock-fill" width="4vw" height="4vh">
+                    </i-bs>
+                    <ng-template #elseBlock>
+                        <i-bs class="myicons" name="lock-fill" width="4vw" height="4vh">
+                        </i-bs>
+                    </ng-template>
                 </td>
-                <td><button class="btn btn-outline-primary button-success" (click)="viewEveryone(data); viewmode=true">view</button> </td>
-                <td><button class="btn btn-outline-danger btn-danger" (click)="usure = true; todelete = data;viewEveryone(data)">remove User</button></td>
+                <td>
+                    <i-bs class="myicons" (click)="viewEveryone(data); viewmode=true" name="eye-fill" width="4vw" height="4vh">
+                    </i-bs>
+                </td>
+                <td>
+                    <i-bs (click)="usure = true; todelete = data;viewEveryone(data)" name="trash-fill" width="4vw" height="4vh">
+                    </i-bs>
+                </td>
 
             </tr>
 
 
         </table>
+
     </div>
 
 </ng-template>

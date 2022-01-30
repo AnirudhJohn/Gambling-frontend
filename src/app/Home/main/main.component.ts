@@ -16,4 +16,12 @@ export class MainComponent implements OnInit {
     localStorage.removeItem('token')
     this.router.navigate(['/login'])
   }
+  myFunction() {
+    var x = document.getElementById("myTopnav")!
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
 }

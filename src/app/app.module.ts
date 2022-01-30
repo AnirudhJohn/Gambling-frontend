@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import "@angular/compiler"
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgxBootstrapIconsModule, allIcons } from 'ngx-bootstrap-icons';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Auth/login/login.component';
@@ -29,6 +29,8 @@ import { LotteryComponent } from './Home/lottery/lottery.component';
 import { SidebarComponent } from './Home/sidebar/sidebar.component';
 import { FullmarketComponent } from './fullmarket/fullmarket.component';
 import { UserItemComponent } from './Dashboard/user-item/user-item.component';
+import { CricketDetailComponent } from './Detailed/cricket-detail/cricket-detail.component';
+import { RightbarComponent } from './Home/rightbar/rightbar.component';
 
 
 @NgModule({
@@ -55,13 +57,18 @@ import { UserItemComponent } from './Dashboard/user-item/user-item.component';
     SidebarComponent,
     FullmarketComponent,
     UserItemComponent,
+    CricketDetailComponent,
+    RightbarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxBootstrapIconsModule.pick(allIcons)
+
+
   ],
   exports: [UserItemComponent, UserlistComponent],
   providers: [LoginServiceService, DataserviceService],

@@ -9,7 +9,7 @@
     <button class="btn btn-primary" (click)="activeElement=[]; pressed =false">Close</button>
     <ul *ngFor="let data of activeElement">
         <li>
-            {{data.match_name}}
+            {{data.match_name}} -- {{data.event_date_start}}
 
         </li>
 
@@ -22,7 +22,7 @@
 
     <ul *ngFor="let data of leagues">
         <li>
-            <button (click)="activeElement=data.matches; pressed=true">{{data.name}}</button>
+            <button>{{data.name}}</button>
         </li>
     </ul>
 

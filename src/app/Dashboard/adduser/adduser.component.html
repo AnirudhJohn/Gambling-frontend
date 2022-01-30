@@ -1,23 +1,27 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div class="mb-3">
+<div class="container">
 
-        <h3>Create Users</h3>
-        <label for="exampleInputEmail1" class="form-label">Username</label>
-        <input type="text" formControlName="username" class="form-control" id="newuser" aria-describedby="emailHelp">
 
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" formControlName="password" class="form-control" id="newpassword">
-        </div>
-        <div *ngIf="showErrorMessage">
 
-            <p> User Already exist !!!</p>
-        </div>
-        <div *ngIf="showSuccessMessage">
+            <h3>Create Users</h3>
+            <label for="exampleInputEmail1" class="form-label">Username</label>
+            <input type="text" formControlName="username" class="form-control" id="newuser" aria-describedby="emailHelp">
 
-            <p> User Created !!</p>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" formControlName="password" class="form-control" id="newpassword">
+            </div>
+            <div *ngIf="showErrorMessage">
+
+                <p> User Already exist !!!</p>
+            </div>
+            <div *ngIf="showSuccessMessage">
+
+                <p> User Created !!</p>
+            </div>
+            <button (click)="add()" type="submit" class="btn btn-primary">Create User</button>
         </div>
-        <button (click)="add()" type="submit" class="btn btn-primary">Create User</button>
-    </div>
-    <span id="response"></span>
-</form>
+        <span id="response"></span>
+    </form>
+</div>

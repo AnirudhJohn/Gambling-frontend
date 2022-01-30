@@ -54,7 +54,7 @@ export class FullmarketComponent implements OnInit {
             'sportbook': false,
             'in_play': false
           }
-          this.betdata.push(temp)
+          // this.betdata.push(temp)
         }
         
         let l = []
@@ -82,7 +82,7 @@ export class FullmarketComponent implements OnInit {
               }
               else
               {
-                this.leagues.push(temp)
+                // this.leagues.push(temp)
                 this.leagues[this.leagues.findIndex((element) => element.name === array_of_leagues[lea])].matches.push(this.betdata[bets])
                 
               }
