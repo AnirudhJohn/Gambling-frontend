@@ -1,5 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable, observable } from 'rxjs';
 import { DataserviceService } from '../dataservice.service';
 
 @Component({
@@ -10,21 +11,20 @@ import { DataserviceService } from '../dataservice.service';
 export class HomedashComponent implements OnInit {
   
   
-  name = '';
+  name!: Observable<String>;
   role = '';
   wallet = 0;
   constructor(private service: DataserviceService) {
-    this.getData()
-    this.name = '';
+    
+    
     this.role = '';
     this.wallet = 0;
-    
+    this.getData()
     
    }
 
   ngOnInit(): void {
     console.log('in init')
-    this.name = '';
     this.role = '';
     this.wallet = 0;
     this.getData()

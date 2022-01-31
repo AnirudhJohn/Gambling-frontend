@@ -60,19 +60,19 @@
                 <!-- if condition to check block status -->
 
                 <td (click)="toogleBlock(data)">
-                    <i-bs class="myicons" *ngIf="data.isActive; else elseBlock" name="unlock-fill" width="4vw" height="4vh">
+                    <i-bs class="myicons" *ngIf="data.isActive; else elseBlock" name="unlock-fill" width="8vw" height="8vh">
                     </i-bs>
                     <ng-template #elseBlock>
-                        <i-bs class="myicons" name="lock-fill" width="4vw" height="4vh">
+                        <i-bs class="myicons" name="lock-fill" width="8vw" height="8vh">
                         </i-bs>
                     </ng-template>
                 </td>
                 <td>
-                    <i-bs class="myicons" (click)="viewEveryone(data); viewmode=true" name="eye-fill" width="4vw" height="4vh">
+                    <i-bs class="myicons" (click)="viewEveryone(data); viewmode=true" name="eye-fill" width="8vw" height="8vh">
                     </i-bs>
                 </td>
                 <td>
-                    <i-bs (click)="usure = true; todelete = data;viewEveryone(data)" name="trash-fill" width="4vw" height="4vh">
+                    <i-bs (click)="usure = true; todelete = data;viewEveryone(data)" name="trash-fill" width="8vw" height="8vh">
                     </i-bs>
                 </td>
 

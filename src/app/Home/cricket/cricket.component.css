@@ -57,22 +57,30 @@ li a:hover:not(.active) {
     .leftnav {
         display: none;
     }
+    .sidebar {
+        width: 100%;
+    }
     .mid {
+        display: none;
         margin-left: 0;
         width: 100%;
         border-left: 0px;
+    }
+    .rightbar {
+        display: none;
     }
 }
 
 .left {
     background-color: rgb(107, 195, 246);
     padding: 10px 10px 10px 10px;
+    border: 1px solid black;
 }
 
 .right {
     background-color: rgb(250, 170, 184);
     padding: 10px 10px 10px 10px;
-    margin-top: 3vh;
+    border: 1px solid black;
 }
 
 .date {
@@ -86,4 +94,26 @@ li a:hover:not(.active) {
     width: 30%;
     margin-left: 70vw;
     border-left: 2px solid black;
+}
+
+.righthead {
+    margin-top: 5vh;
+    border: 2px solid rgb(135, 56, 199);
+    text-align: center;
+}
+
+.midmobile {
+    background-color: rgb(211, 211, 209);
+    margin-top: -9vh;
+}
+
+@media only screen and (min-width: 768px) {
+    .midmobile {
+        display: none;
+    }
+}
+
+.tablecontent {
+    background-color: white;
+    font-size: 2vw;
 }

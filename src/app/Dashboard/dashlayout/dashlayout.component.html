@@ -1,56 +1,60 @@
 <!--Main Navigation-->
-<header>
-    <div class="phone-sidebar">
-        <a [ngClass]="{'active': i == 1}" routerLink="./" (click)="activ(i)" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
-            <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
-        </a>
-        <a [ngClass]="{'active': a == 1}" routerLink="./adduser" (click)="activ(a)" class="list-group-item list-group-item-action py-2 ripple ">
-            <i class="fas fa-chart-area fa-fw me-3"></i><span>Add User</span>
-        </a>
+<div class="pc">
+    <header>
+        <div class="phone-sidebar">
+            <a [ngClass]="{'active': i == 1}" routerLink="./" (click)="activ(i)" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+                <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+            </a>
+            <a [ngClass]="{'active': a == 1}" routerLink="./adduser" (click)="activ(a)" class="list-group-item list-group-item-action py-2 ripple ">
+                <i class="fas fa-chart-area fa-fw me-3"></i><span>Add User</span>
+            </a>
 
 
-        <a [ngClass]="{'active': c == 1}" routerLink="./userlist" (click)="activ(c)" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-chart-line fa-fw me-3"></i><span>Users list</span></a
+            <a [ngClass]="{'active': c == 1}" routerLink="./userlist" (click)="activ(c)" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-chart-line fa-fw me-3"></i><span>Users list</span></a
 >
-        <a [ngClass]="{'active': d == 1}" routerLink="./transactions" (click)="activ(d)" class="list-group-item list-group-item-action py-2 ripple">
-            <i class="fas fa-chart-pie fa-fw me-3"></i><span>Transaction History</span>
-        </a>
-        <a *ngIf="this.isCreator" [ngClass]="{'active': e == 1}" routerLink="./generatetokens" (click)="activ(e)" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-chart-bar fa-fw me-3"></i><span>Generate Money</span></a
+            <a [ngClass]="{'active': d == 1}" routerLink="./transactions" (click)="activ(d)" class="list-group-item list-group-item-action py-2 ripple">
+                <i class="fas fa-chart-pie fa-fw me-3"></i><span>Transaction History</span>
+            </a>
+            <a *ngIf="this.isCreator" [ngClass]="{'active': e == 1}" routerLink="./generatetokens" (click)="activ(e)" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-chart-bar fa-fw me-3"></i><span>Generate Money</span></a
 >
-        <a [ngClass]="{'active': f == 1}" routerLink="./transfer" (click)="activ(f)" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-globe fa-fw me-3"></i><span>Transfer Money</span></a
+            <a [ngClass]="{'active': f == 1}" routerLink="./transfer" (click)="activ(f)" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-globe fa-fw me-3"></i><span>Transfer Money</span></a
 >
-        <a [ngClass]="{'active': g == 1}" routerLink="." (click)="activ(g)" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-building fa-fw me-3"></i><span>Betting-status</span></a
+            <a [ngClass]="{'active': g == 1}" routerLink="." (click)="activ(g)" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-building fa-fw me-3"></i><span>Betting-status</span></a
 >
-        <!-- <button (click)="logout()" class="list-group-item list-group-item-action py-2 ripple"
+            <!-- <button (click)="logout()" class="list-group-item list-group-item-action py-2 ripple"
 ><i class="fas fa-calendar fa-fw me-3" ></i><span>Logout</span></button -->
 
-        <button class="d-flex btn-danger btn-sm" (click)="logout()">Logout</button>
+            <button class="d-flex btn-danger btn-sm" (click)="logout()">Logout</button>
 
-    </div>
-    <!-- Sidebar -->
-    <nav id="sidebarMenu" class="collapse d-lg-block sidebar  collapse bg-white">
-        <!-- sidebar class / -->
-        <div class="position-sticky">
-            <div class="list-group list-group-flush mx-3 mt-4">
-                <a [ngClass]="{'active': i == 1}" routerLink="./" (click)="activ(i)" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
-                    <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
-                </a>
-                <a [ngClass]="{'active': a == 1}" routerLink="./adduser" (click)="activ(a)" class="list-group-item list-group-item-action py-2 ripple ">
-                    <i class="fas fa-chart-area fa-fw me-3"></i><span>Add User</span>
-                </a>
+        </div>
+        <!-- Sidebar -->
+        <nav id="sidebarMenu" class="collapse d-lg-block sidebar  collapse bg-white">
+            <!-- sidebar class / -->
+            <div class="position-sticky">
+                <div class="list-group list-group-flush mx-3 mt-4">
+                    <a [ngClass]="{'active': i == 1}" routerLink="./" (click)="activ(i)" class="list-group-item list-group-item-action py-2 ripple active" aria-current="true">
+                        <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
+                    </a>
+                    <a *ngIf="this.isCreator || this.restUser" [ngClass]="{'active': a == 1}" routerLink="./adduser" (click)="activ(a)" class="list-group-item list-group-item-action py-2 ripple ">
+                        <i class="fas fa-chart-area fa-fw me-3"></i><span>Add User</span>
+                    </a>
 
 
-                <a [ngClass]="{'active': c == 1}" routerLink="./userlist" (click)="activ(c)" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-chart-line fa-fw me-3"></i><span>Users list</span></a
+                    <a *ngIf="this.isCreator || this.restUser" [ngClass]="{'active': c == 1}" routerLink="./userlist" (click)="activ(c)" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-chart-line fa-fw me-3"></i><span>Users list</span></a
           >
           <a [ngClass]="{'active': d == 1}" routerLink="./transactions" (click)="activ(d)" class="list-group-item list-group-item-action py-2 ripple">
             <i class="fas fa-chart-pie fa-fw me-3"></i><span>Transaction History</span>
           </a>
-                <a *ngIf="this.isCreator" [ngClass]="{'active': e == 1}" routerLink="./generatetokens" (click)="activ(e)" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-chart-bar fa-fw me-3"></i><span>Generate Money</span></a
+                    <a *ngIf="this.isCreator" [ngClass]="{'active': e == 1}" routerLink="./generatetokens" (click)="activ(e)" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-chart-bar fa-fw me-3"></i><span>Generate Money</span></a
           >
           <a [ngClass]="{'active': f == 1}" routerLink="./transfer" (click)="activ(f)" class="list-group-item list-group-item-action py-2 ripple"
             ><i class="fas fa-globe fa-fw me-3"></i><span>Transfer Money</span></a
           >
           <a [ngClass]="{'active': g == 1}" routerLink="." (click)="activ(g)" class="list-group-item list-group-item-action py-2 ripple"
             ><i class="fas fa-building fa-fw me-3"></i><span>Betting-status</span></a
+          >
+          <a [ngClass]="{'active': g == 1}" routerLink="/home" (click)="activ(g)" class="list-group-item list-group-item-action py-2 ripple"
+            ><i class="fas fa-building fa-fw me-3"></i><span>Play Zone</span></a
           >
           <!-- <button (click)="logout()" class="list-group-item list-group-item-action py-2 ripple"
             ><i class="fas fa-calendar fa-fw me-3" ></i><span>Logout</span></button -->
@@ -85,46 +89,75 @@
             <b> SSSPZONE </b>
 
         </a>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" routerLink="/home"><b> HOME</b></a>
-                    </li>
-                </ul>
-                <!-- Search form -->
-                <form class="d-none d-md-flex input-group w-auto my-auto">
-                    <input autocomplete="off" type="search" class="form-control rounded" placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px;" />
-                    <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
-                </form>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" routerLink="/home"><b> HOME</b></a>
+                        </li>
+                    </ul>
+                    <!-- Search form -->
+                    <form class="d-none d-md-flex input-group w-auto my-auto">
+                        <input autocomplete="off" type="search" class="form-control rounded" placeholder='Search (ctrl + "/" to focus)' style="min-width: 225px;" />
+                        <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
+                    </form>
 
-                <!-- Right links -->
+                    <!-- Right links -->
 
-            </div>
-            <!-- Container wrapper -->
-    </nav>
-    <!-- Navbar -->
+                </div>
+                <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
 
-</header>
-<!--Main Navigation-->
+    </header>
+    <!--Main Navigation-->
 
-<!--Main layout-->
+    <!--Main layout-->
 
-<main style="margin-top: 58px;">
-    <div class="container pt-4">
-
-        <router-outlet></router-outlet>
-        <!-- create uiser  -->
-
-
-
-
-        <!-- generator -->
-
-
-
-
-        <!-- money transfer -->
-
-
-
+    <main style="margin-top: 58px;">
+        <div class="container pt-4">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
     </div>
-</main>
+
+
+
+
+    <div class="mobdash">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" routerLink="#">SSSPZONE</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" routerLink="/dash">Home</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" routerLink="/home">Play Zone</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="./adduser">Add user</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="./userlist">Userlist</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="./transactions">Transactions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="./transfer">Transfer money</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" (click)="logout()">Logout</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <div class="container main-content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>

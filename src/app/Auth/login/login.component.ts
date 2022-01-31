@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   t = localStorage.getItem('token')
   loginError = ''
   showErrorMessage = false
+
   constructor(private loginService: LoginServiceService,
     private router: Router,
     private activatedRoute: ActivatedRoute) { 
@@ -27,11 +28,12 @@ export class LoginComponent implements OnInit {
       });
     
       if(localStorage.getItem('token') !== undefined || localStorage.getItem('token') !== null){
-        // this.validateSession(this.t)
+        this.validateSession(this.t)
       }else {
         console.log('session not validated')
       }
      }
+    //  constructor closed
 
   ngOnInit(): void {
     

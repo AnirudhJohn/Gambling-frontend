@@ -16,7 +16,8 @@
         <a routerLink="./lottery">Lottery</a>
         <a routerLink="/dash">Dashboard</a>
         <a routerLink="javascript:void(0);" class="icon" (click)="myFunction()">
-            <i class="fa fa-bars"></i>
+            <i-bs name="hdd-stack-fill" width="25" height="25">
+            </i-bs>
         </a>
     </div>
 </div>
@@ -25,7 +26,25 @@
     <router-outlet></router-outlet>
 </div>
 
-
+<div class="footer">
+    <nav class="nav">
+        <a routerLink="." class="nav__link">
+            <span class="nav__text">Home</span>
+        </a>
+        <a routerLink="./cricket" class="nav__link nav__link--active">
+            <span class="nav__text">Cricket</span>
+        </a>
+        <a routerLink="./tennis" class="nav__link">
+            <span class="nav__text">Tennis</span>
+        </a>
+        <a routerLink="./socker" class="nav__link">
+            <span class="nav__text">Socker</span>
+        </a>
+        <a routerLink="/dash" class="nav__link">
+            <span class="nav__text">Dashboard</span>
+        </a>
+    </nav>
+</div>
 
 
 

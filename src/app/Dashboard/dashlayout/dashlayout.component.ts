@@ -21,7 +21,8 @@ export class DashlayoutComponent implements OnInit {
 
   t = localStorage.getItem('token');
   isCreator: boolean;
-
+  isUser: boolean = false
+  restUser: boolean = false
   constructor(
     private loginService: LoginServiceService,
     private router: Router,
@@ -30,6 +31,8 @@ export class DashlayoutComponent implements OnInit {
   ) {
     this.validateSession(this.t);
     this.isCreator = false;
+    this.isUser = false
+    this.restUser = false
     this.getData();
   }
 
@@ -41,15 +44,7 @@ export class DashlayoutComponent implements OnInit {
   }
 
   activ(q: any) {
-    // this.a = 0  ;
-    // this.b = 0  ;
-    // this.c = 0  ;
-    // this.d = 0  ;
-    // this.e = 0  ;
-    // this.f = 0  ;
-    // this.g = 0  ;
-    // this.h = 0  ;
-    // this.i = 0  ;
+  
   }
 
   getData() {
@@ -57,6 +52,10 @@ export class DashlayoutComponent implements OnInit {
       let arr = JSON.parse(JSON.stringify(data));
       if (arr['role'] === 'creator') {
         this.isCreator = true;
+      } else if(arr['role'] === 'user'){
+        this.isUser = true
+      } else {
+        this.restUser = true
       }
     });
   }

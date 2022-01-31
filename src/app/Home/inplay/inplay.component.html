@@ -40,7 +40,42 @@
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
   <span class="carousel-control-next-icon" aria-hidden="true"></span>
   <span class="visually-hidden">Next</span>
-</button></div>
-    <div class="mid2">
-        <h3>Inpolat is working</h3>
+</button>
+        <div class="mid2">
+            <h3>In Play matches</h3>
+        </div>
+
+
+
     </div>
+
+
+
+    <div *ngIf="!noLiveMatches" class="container">
+
+        <table class="table table-hover">
+            <thead>
+                <tr style="background-color: rgb(167, 166, 165);">
+                    <th style="width: 60%;"> LEAGE NAME</th>
+                    <th>1</th>
+                    <th>X</th>
+                    <th>2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of allData">
+                    <td (click)="pressed=true;details(data)"><a>{{data.event_home_team}}</a> <br>{{data.event_date_start}} - {{data.event_time}} -- {{data.event_key}}</td>
+                    <td><span class="left">{{data.back[0]}}</span>
+                        <!-- <span class="right">4.3</span> -->
+                    </td>
+                    <td><span class="left">{{data.back[1]}}</span> </td>
+                    <td><span class="left">{{data.back[2]}}</span> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="noLiveMatches" class="container">
+        <h1>No live matches at the moment </h1>
+    </div>
+
+</div>
